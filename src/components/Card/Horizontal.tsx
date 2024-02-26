@@ -1,6 +1,9 @@
+import { Product } from "../../pages/Home/Home";
 import cartStore from "../../stores/CartStore";
 
-const Horizontal = ({ item }) => {
+export const Horizontal = (props: { item: Product }) => {
+  const { item } = props;
+
   return (
     <div
       key={item.id}
@@ -25,5 +28,3 @@ const Horizontal = ({ item }) => {
     </div>
   );
 };
-
-export default Horizontal;

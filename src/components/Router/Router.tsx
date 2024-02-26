@@ -1,13 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { Home } from "../../pages/Home/Home";
-import Cart from "../../pages/Cart/Cart";
+import { Cart } from "../../pages/Cart/Cart";
+import { ROUTES } from "../../helper/constants";
 
-export const ROUTES = {
-  home: "/",
-  cart: "/cart",
-};
-
-const Router = () => {
+export const Router = () => {
   return (
     <Routes>
       <Route path={ROUTES.home} element={<Home />} />
@@ -16,5 +12,3 @@ const Router = () => {
     </Routes>
   );
 };
-
-export default Router;

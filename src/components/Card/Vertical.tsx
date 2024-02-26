@@ -2,10 +2,11 @@ import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 import { isProductInCart } from "../../helper/utils";
 import cartStore from "../../stores/CartStore";
-import { ROUTES } from "../Router/Router";
 import { Product } from "../../pages/Home/Home";
+import { ROUTES } from "../../helper/constants";
 
-const Vertical = ({ item }: { item: Product }) => {
+export const Vertical = observer((props: { item: Product }) => {
+  const { item } = props;
   const navigate = useNavigate();
 
   const addToCartHandler = (
@@ -44,6 +45,4 @@ const Vertical = ({ item }: { item: Product }) => {
       </button>
     </div>
   );
-};
-
-export default observer(Vertical);
+});

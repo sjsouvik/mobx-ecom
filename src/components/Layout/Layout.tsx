@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Layout.css";
-import { ROUTES } from "../Router/Router";
 import cartStore from "../../stores/CartStore";
 import { observer } from "mobx-react-lite";
+import { ROUTES } from "../../helper/constants";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+export const Layout = observer((props: { children: React.ReactNode }) => {
+  const { children } = props;
+
   return (
     <div className="layout">
       <header className="header">
@@ -26,6 +28,4 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <footer className="footer">&copy; All rights reserved</footer>
     </div>
   );
-};
-
-export default observer(Layout);
+});

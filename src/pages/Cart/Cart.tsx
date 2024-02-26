@@ -4,7 +4,7 @@ import { Horizontal } from "../../components/";
 import { pluralize } from "../../helper/utils";
 import cartStore from "../../stores/CartStore";
 
-const Cart = () => {
+export const Cart = observer(() => {
   return (
     <Layout>
       <h1>{`My Cart (${pluralize(cartStore.length, "item")})`}</h1>
@@ -23,6 +23,4 @@ const Cart = () => {
       )}
     </Layout>
   );
-};
-
-export default observer(Cart);
+});
