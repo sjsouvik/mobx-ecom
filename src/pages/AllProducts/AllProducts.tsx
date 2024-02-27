@@ -1,23 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Product } from "../Home/Home";
 import { Vertical } from "../../components";
 
-import "./Home.css";
-
-export interface Product {
-  id: number;
-  title: string;
-  price: number;
-  thumbnail: string;
-}
-
-export const Home = () => {
+export const AllProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const loadProducts = async () => {
       const response = await fetch("https://dummyjson.com/products");
       const data = await response.json();
-      setProducts(data.products.slice(0, 10));
+      setProducts(data.products);
     };
 
     loadProducts();

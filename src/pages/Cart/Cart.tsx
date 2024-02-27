@@ -1,13 +1,17 @@
 import { observer } from "mobx-react-lite";
-import { Layout } from "../../components";
 import { Horizontal } from "../../components/";
 import { pluralize } from "../../helper/utils";
 import cartStore from "../../stores/CartStore";
 
+import "./Cart.css";
+
 export const Cart = observer(() => {
   return (
-    <Layout>
-      <h1>{`My Cart (${pluralize(cartStore.length, "item")})`}</h1>
+    <>
+      <h1 className="text-center">{`My Cart (${pluralize(
+        cartStore.length,
+        "item"
+      )})`}</h1>
       {cartStore.length > 0 && (
         <p
           style={{ marginTop: "1rem" }}
@@ -17,10 +21,10 @@ export const Cart = observer(() => {
         <Horizontal key={item.id} item={item} />
       ))}
       {cartStore.length === 0 && (
-        <p style={{ marginTop: "5rem" }}>
+        <p className="text-center" style={{ marginTop: "5rem" }}>
           :( Your Cart is empty! Please add some items.
         </p>
       )}
-    </Layout>
+    </>
   );
 });

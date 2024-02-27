@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { isProductInCart } from "../../helper/utils";
 import cartStore from "../../stores/CartStore";
 import { Product } from "../../pages/Home/Home";
@@ -26,12 +26,15 @@ export const Vertical = observer((props: { item: Product }) => {
       key={item.id}
       style={{
         border: "1px solid black",
+        marginTop: "1rem",
         padding: "1rem",
         borderRadius: "0.5rem",
       }}
     >
-      <p>{item.title}</p>
-      <p style={{ margin: "1rem" }}>{`Price: ${item.price}`}</p>
+      <Link to={`/products/${item.id}`}>
+        <p>{item.title}</p>
+        <p style={{ margin: "1rem" }}>{`Price: ${item.price}`}</p>
+      </Link>
       <button
         style={{
           padding: "0.25rem",

@@ -1,9 +1,12 @@
-import { Router } from "./components";
+import { Breadcrumb, Layout, Router } from "./components";
 import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <Layout>
+        <Breadcrumb />
+        <Router />
+      </Layout>
     </BrowserRouter>
   );
 }
