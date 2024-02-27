@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Vertical } from "../../components";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../helper/constants";
 
 import "./Home.css";
 
@@ -13,6 +15,8 @@ export interface Product {
 export const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const loadProducts = async () => {
       const response = await fetch("https://dummyjson.com/products");
@@ -24,12 +28,18 @@ export const Home = () => {
   }, []);
 
   return (
-    <ul className="products">
-      {products.map((product) => (
-        <li key={product.id}>
-          <Vertical item={product} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <h1>Trending products</h1>
+      <ul className="products">
+        {products.map((product) => (
+          <li key={product.id}>
+            <Vertical item={product} />
+          </li>
+        ))}
+      </ul>
+      <button onClick={() => navigate(ROUTES.products)}>
+        Browse all products
+      </button>
+    </>
   );
 };

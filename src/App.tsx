@@ -1,6 +1,7 @@
 import { Breadcrumb, Layout, Router } from "./components";
 import { BrowserRouter } from "react-router-dom";
-function App() {
+
+const App = () => {
   return (
     <BrowserRouter>
       <Layout>
@@ -9,6 +10,6 @@ function App() {
       </Layout>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
