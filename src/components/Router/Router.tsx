@@ -3,7 +3,7 @@ import { Home } from "../../pages/Home/Home";
 import { Cart } from "../../pages/Cart/Cart";
 import { ProductDetails } from "../../pages/ProductDetails/ProductDetails";
 import { AllProducts } from "../../pages/AllProducts/AllProducts";
-import { ROUTES } from "../../helper/constants";
+import { ROUTES } from "../../common/constants";
 
 export const Router = () => {
   return (

@@ -1,9 +1,9 @@
 import { observer } from "mobx-react-lite";
 import { Link, useNavigate } from "react-router-dom";
-import { isProductInCart } from "../../helper/utils";
+import { isProductInCart } from "../../common/utils";
 import cartStore from "../../stores/CartStore";
 import { Product } from "../../pages/Home/Home";
-import { ROUTES } from "../../helper/constants";
+import { ROUTES } from "../../common/constants";
 
 import "./Card.css";
 

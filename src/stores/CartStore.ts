@@ -1,6 +1,6 @@
 import { makeAutoObservable, autorun, runInAction } from "mobx";
 
-import { isProductInCart } from "../helper/utils";
+import { isProductInCart } from "../common/utils";
 import { Product } from "../pages/Home/Home";
 
 const fakeFetch = () => {

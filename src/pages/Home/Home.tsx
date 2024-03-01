@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Vertical } from "../../components";
 import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../helper/constants";
+import { ROUTES } from "../../common/constants";
 
 import "./Home.css";
 

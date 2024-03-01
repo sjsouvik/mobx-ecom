@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Layout.css";
 import cartStore from "../../stores/CartStore";
 import { observer } from "mobx-react-lite";
-import { ROUTES } from "../../helper/constants";
+import { ROUTES } from "../../common/constants";
 
 export const Layout = observer((props: { children: React.ReactNode }) => {
   const { children } = props;

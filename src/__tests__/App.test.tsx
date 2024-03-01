@@ -1,6 +1,6 @@
 import { act, render } from "@testing-library/react";
 import { Mock } from "vitest";
-import { products } from "../helper/testData";
+import { products } from "../common/testData";
 import App from "../App";
 
 describe("Test the home page", () => {

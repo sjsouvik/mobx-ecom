@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { Horizontal } from "../../components/";
-import { pluralize } from "../../helper/utils";
+import { pluralize } from "../../common/utils";
 import cartStore from "../../stores/CartStore";
 
 import "./Cart.css";

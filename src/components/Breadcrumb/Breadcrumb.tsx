@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { ROUTES } from "../../helper/constants";
+import { ROUTES } from "../../common/constants";
 
 export const Breadcrumb = () => {
   const location = useLocation();
