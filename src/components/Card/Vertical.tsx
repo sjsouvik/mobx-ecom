@@ -5,6 +5,8 @@ import cartStore from "../../stores/CartStore";
 import { Product } from "../../pages/Home/Home";
 import { ROUTES } from "../../helper/constants";
 
+import "./Card.css";
+
 export const Vertical = observer((props: { item: Product }) => {
   const { item } = props;
   const navigate = useNavigate();
@@ -22,15 +24,7 @@ export const Vertical = observer((props: { item: Product }) => {
   };
 
   return (
-    <div
-      key={item.id}
-      style={{
-        border: "1px solid black",
-        marginTop: "1rem",
-        padding: "1rem",
-        borderRadius: "0.5rem",
-      }}
-    >
+    <li className="v-card">
       <Link to={`/products/${item.id}`}>
         <p>{item.title}</p>
         <p style={{ margin: "1rem" }}>{`Price: ${item.price}`}</p>
@@ -38,7 +32,6 @@ export const Vertical = observer((props: { item: Product }) => {
       <button
         style={{
           padding: "0.25rem",
-          cursor: "pointer",
         }}
         onClick={(e) => addToCartHandler(e, item)}
       >
@@ -46,6 +39,6 @@ export const Vertical = observer((props: { item: Product }) => {
           ? "GO TO CART"
           : "ADD TO CART"}
       </button>
-    </div>
+    </li>
   );
 });

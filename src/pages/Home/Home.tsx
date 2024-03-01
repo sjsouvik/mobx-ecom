@@ -32,9 +32,7 @@ export const Home = () => {
       <h1>Trending products</h1>
       <ul className="products">
         {products.map((product) => (
-          <li key={product.id}>
-            <Vertical item={product} />
-          </li>
+          <Vertical key={product.id} item={product} />
         ))}
       </ul>
       <button onClick={() => navigate(ROUTES.products)}>
